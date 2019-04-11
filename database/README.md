@@ -60,8 +60,16 @@ chmod +x XXXX.sh
 > history---> 记录用户历史信息（以防手贱）
 > XXXX.conf这个是初始配置  
 > 举个栗子
+##### mysql.conf
 ```
-
+hostname=127.0.0.1               # IP,按照服务器地址自己改
+port=3306                        # 默认映射端口，可以自己改，没有影响
+user=root                        # 用户名（这个根据服务不一样，mysql是root，postgresql是postgres）
+password=mysql                   # 这个是默认的密码，引入用户信息后会被覆盖
+database=mysql                   # 可有可无
+docker_name=mysql                # docker容器默认的重命名，同样会被覆盖
+volume_name=mysql                # docker的volume中会用到，脚本中暂未使用
+mysql_v=mysql:5.7.24             # 这个是数据库的名称和版本信息，可以寄几改
 ```
 #### 3.启动数据库
 > 切换到上级目录
@@ -71,3 +79,5 @@ chmod +x XXXX.sh
     * create 启动docker容器
     * stop 停止容器
     * delete 删除docker容器
+
+# OJBK
